@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  php:
+    container_name: app_php
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: mysql_db
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ddd_test
+      MYSQL_USER: ddd_user
+      MYSQL_PASSWORD: ddd_pass
+    ports:
+      - 3306:3306

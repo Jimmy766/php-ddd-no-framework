@@ -1,0 +1,72 @@
+# PHP Composer
+/vendor/
+composer.lock
+composer.phar
+.phpunit.result.cache
+
+# PHPUnit
+/phpunit.xml
+/coverage/
+/coverage.xml
+/phpunit.xml.dist
+/phpunit.result.cache
+/.phpunit.cache/
+
+# IDE files
+/.idea/
+/.vscode/
+/.phpstorm.meta.php
+/_ide_helper.php
+/_ide_helper_models.php
+.phpstorm.meta.php
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Environment files
+/.env
+/.env.local
+/.env.*.local
+/.env.backup
+
+# Log and cache
+/var/cache/
+/var/logs/
+/var/log/
+/logs/
+/log/
+*.log
+
+# Docker
+/docker-compose.override.yml
+/.docker/.env
+
+# Build artifacts
+/build/
+/dist/
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+
+# DDD specific
+/var/tmp/
+/tmp/
+/public/bundles/
+
+# PHP CS Fixer
+/.php_cs
+/.php_cs.cache
+/.php-cs-fixer.cache
+/.php-cs-fixer.php
+
+# PHPStan
+/phpstan.neon
+/phpstan-baseline.neon
+
+# Infection
+/infection.log
+
