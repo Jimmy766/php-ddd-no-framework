@@ -1,0 +1,27 @@
+
+App\Domain\Model\User\User:
+    type: entity
+    table: users
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: NONE
+
+    fields:
+        name:
+            type: string
+            length: 100
+
+        email:
+            type: string
+            length: 180
+            unique: true
+
+        password:
+            type: string
+            length: 255
+
+        createdAt:
+            type: datetime

@@ -5,7 +5,9 @@
     "license": "proprietary",
     "require": {
         "php": "^7.4",
-        "doctrine/orm": "^2.9"
+        "doctrine/cache": "^1.11",
+        "doctrine/orm": "^2.9",
+        "symfony/yaml": "^5.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
@@ -37,4 +39,3 @@
     "minimum-stability": "stable",
     "prefer-stable": true
 }
-
