@@ -11,8 +11,8 @@ Este proyecto demuestra un ejemplo mínimo de arquitectura DDD en PHP 7.x, usand
    git clone https://github.com/Jimmy766/php-ddd-no-framework.git
 
 2. Entrar al directorio y levantar contenedores:
-   cd prueba-php-ddd
-   make up
+   - cd prueba-php-ddd
+   - make up
 
 3. Instalar dependencias dentro del contenedor PHP:
    docker-compose exec php composer install
@@ -21,8 +21,8 @@ Este proyecto demuestra un ejemplo mínimo de arquitectura DDD en PHP 7.x, usand
    make db-create
 
 5. (Opcional) Ejecutar pruebas:
-   cp phpunit.xml.dist phpunit.xml
-   make tests
+   - cp phpunit.xml.dist phpunit.xml
+   - make tests
 
 6. Acceder a la aplicación:
    - La app estará disponible en http://localhost:8080 (según tu docker-compose)
