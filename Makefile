@@ -13,5 +13,8 @@ bash-php:
 bash-db:
 	docker-compose exec db bash
 
+db-create:
+	docker-compose exec php php vendor/bin/doctrine orm:schema-tool:create
+
 test:
 	docker-compose exec php ./vendor/bin/phpunit

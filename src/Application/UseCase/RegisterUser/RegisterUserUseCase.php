@@ -9,6 +9,7 @@ use App\Domain\Model\User\UserId;
 use App\Domain\Model\User\Name;
 use App\Domain\Model\User\Email;
 use App\Domain\Model\User\Password;
+use App\Domain\Exception\UserAlreadyExistsException;
 
 class RegisterUserUseCase
 {
@@ -37,7 +38,7 @@ class RegisterUserUseCase
     {
         $this->validateEmail(new Email($request->email()));
         $user = new User(
-            new UserId(),
+            new UserId($request->id()),
             new Name($request->name()),
             new Email($request->email()),
             new Password($request->password())
@@ -45,14 +46,19 @@ class RegisterUserUseCase
 
         $this->userRepository->save($user);
 
-        $this->notifyDomainEvent(new UserRegisteredEvent($user->getId()->value()));
+        $this->notifyDomainEvent(new UserRegisteredEvent($user->getId()));
 
-        return $user->getId()->value();
+        return new RegisterUserResponse(
+            $user->getId()->value(),
+            $user->getName()->value(),
+            $user->getEmail()->value(),
+            'User registered successfully'
+        );
     }
 
     private function validateEmail(Email $email)
     {
-        $found = $this->userRepository->findByEmail($email);
+        $found = $this->userRepository->getByEmail($email);
         if ($found) {
             throw new UserAlreadyExistsException();
         }
