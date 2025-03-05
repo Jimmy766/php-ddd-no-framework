@@ -8,7 +8,7 @@ Este proyecto demuestra un ejemplo mínimo de arquitectura DDD en PHP 7.x, usand
 ## Pasos para ejecutar el entorno
 
 1. Clonar el repositorio:
-   git clone https://github.com/usuario/prueba-php-ddd.git
+   git clone https://github.com/Jimmy766/php-ddd-no-framework.git
 
 2. Entrar al directorio y levantar contenedores:
    cd prueba-php-ddd
