@@ -8,7 +8,7 @@ composer.phar
 /phpunit.xml
 /coverage/
 /coverage.xml
-/phpunit.xml.dist
+# /phpunit.xml.dist
 /phpunit.result.cache
 /.phpunit.cache/
 
