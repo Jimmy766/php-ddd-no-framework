@@ -2,6 +2,8 @@
 
 namespace App\Domain\Model\User;
 
+use App\Domain\Exception\InvalidNameException;
+
 class Name{
     private $value;
 
@@ -13,7 +15,7 @@ class Name{
     private function assertValidName(string $name): void{
         $trimmed = trim($name);
         if(strlen($trimmed) < 3){
-            throw new \InvalidNameException("Invalid name: $name, must be at least 3 characters long");
+            throw new InvalidNameException("Invalid name: $name, must be at least 3 characters long");
         }
     }
 

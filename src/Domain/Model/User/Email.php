@@ -2,12 +2,14 @@
 
 namespace App\Domain\Model\User;
 
+use App\Domain\Exception\InvalidEmailException;
+
 class Email{
     private $value;
 
     public function __construct(string $value){
         if(!filter_var($value, FILTER_VALIDATE_EMAIL)){
-            throw new \InvalidEmailException("Invalid email address: $value");
+            throw new InvalidEmailException("Invalid email address: $value");
         }
         $this->value = $value;
     }
