@@ -2,6 +2,8 @@
 
 namespace App\Domain\Model\User;
 
+use App\Domain\Exception\WeakPasswordException;
+
 class Password{
     private $value;
 
